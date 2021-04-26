@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Java RMI Chat application
+ * Built for the Distributed Systems & Systems Integration Continuous Assigment
+ * DT249/4 CMPU4022
+ * By: Jonas Samaitis Student Id: D17124413
+ ******************************************************************************/
 package Server;
 
 import java.awt.Color;

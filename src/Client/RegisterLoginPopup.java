@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Java RMI Chat application
+ * Built for the Distributed Systems & Systems Integration Continuous Assignment
+ * DT249/4 CMPU4022
+ * By: Jonas Samaitis Student Id: D17124413
+ ******************************************************************************/
 package Client;
 
 import java.awt.EventQueue;
@@ -16,7 +22,6 @@ class RegisterLoginPopup {
 	//Initial frame to live inside JOptionPane
 	static JFrame f = new JFrame();
 	
-	@SuppressWarnings("unlikely-arg-type")
 	static void displayLogin(String message, boolean sameName) {
 		
 		
@@ -41,12 +46,13 @@ class RegisterLoginPopup {
 		// method to gather a list of all Countries 
 		Country[] listCountry = createCountryList();
 		// Drop down field for country list
-		JComboBox<Country> combo = new JComboBox<>(listCountry);
+		JComboBox<Country> combo = new JComboBox<>(listCountry);		
 		
-		// Set this to Spain by default :)
-		combo.setSelectedIndex(-1);
+		//I can set this to blank by default
+		//combo.setSelectedIndex(-1);
 		
-		//combo.getSelectedItem() = "--select--"; 
+		// But I set this to Spain by default :)
+		combo.setSelectedIndex(200);
 		
 		final JTextField datePicker = new JTextField(20);
 		JButton b = new JButton("open calendar");

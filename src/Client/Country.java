@@ -1,3 +1,9 @@
+/*******************************************************************************
+ * Java RMI Chat application
+ * Built for the Distributed Systems & Systems Integration Continuous Assigment
+ * DT249/4 CMPU4022
+ * By: Jonas Samaitis Student Id: D17124413
+ ******************************************************************************/
 package Client;
 
 // country class for the implementation in the country selection on the initial login
