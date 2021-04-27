@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Vector;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -161,6 +163,10 @@ public class ChatServer extends UnicastRemoteObject implements IChatServer {
 				}
 				
 			} 
+			
+	      
+			
+			
 			// add an new user object to the chatClients vector 
 			chatClients.addElement(new User(details[0], details[1], details[2], userStub));
 			
@@ -171,7 +177,7 @@ public class ChatServer extends UnicastRemoteObject implements IChatServer {
 			// invoke massSend to the send message to all connected clients to notify about new user 
 			// didn't implement a compare function to return age by comparing input date with todays date. 
 			// It getting late and there is still plenty to finish. Sorry...
-			massSend("The new user called " + details[0] + " From: " + details[1] + " who is " + details[2] 
+			massSend("The new user called " + details[0] + " from " + details[2] + " who is " + details[1] 
 					+ " years old, has joined the system Please, say hello to " + details[0], details[0] + "\n");
 
 			//add user name to the list of connected users and update usersPanel in the ChatGUI

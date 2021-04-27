@@ -8,6 +8,9 @@ package Client;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import javax.swing.*;
 
 public class DatePicker {
@@ -89,8 +92,27 @@ public class DatePicker {
 			return day;
 		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(
 				"dd-MM-yyyy");
+		
 		java.util.Calendar cal = java.util.Calendar.getInstance();
+		
 		cal.set(year, month, Integer.parseInt(day));
+		
+		
+		
+
+		// According to this post 
+		// Code below should compare input date with date now and return the age of the person. 
+		
+             	
+//    	long difference_In_Time = cal.getTime() - nowDate.getTime();  
+//      long difference_In_Years = (difference_In_Time  / (1000l * 60 * 60 * 24 * 365));  
+//      System.out.print( "Difference " + "between two dates is: "); 
+//      System.out.println(   difference_In_Years  );
+       
+  
+		
 		return sdf.format(cal.getTime());
 	}
+	
+	
 }

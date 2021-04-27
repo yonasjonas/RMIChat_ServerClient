@@ -1,4 +1,6 @@
 
+### I have used Eclipse to run the program. By opening a folder and running as java application.
+
 
 # Java RMI Chat application 
 

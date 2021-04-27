@@ -80,7 +80,7 @@ public class ChatUI extends JFrame implements ActionListener {
 
 		
 		// closes the chat client window. 
-		// Sends messag to all to notify about leaving. 
+		// Sends a message to all to notify about leaving. 
 		// Removes from chatClient vector. 
 		frame.addWindowListener(new java.awt.event.WindowAdapter() {
 			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
@@ -97,6 +97,8 @@ public class ChatUI extends JFrame implements ActionListener {
 				System.exit(0);
 			}
 		});
+		
+		// Garbage collector
 		Runtime.getRuntime().gc();
 	}
 	// function is triggered from RegisterLoginPopup to initialise reigstration
@@ -119,9 +121,7 @@ public class ChatUI extends JFrame implements ActionListener {
 		
 		JPanel inputPanel = new JPanel(new BorderLayout());
 		inputArea = new JTextArea();
-		inputPanel.setBorder(new EmptyBorder(5, 5, 10, 10));
-		//inputArea.setPreferredSize(new Dimension(540, 90));
-		//inputPanel.setPreferredSize(new Dimension(600, 60));
+		inputPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		inputPanel.add(addButton(), BorderLayout.EAST);
 		inputPanel.add(inputArea);
 		return inputPanel;
@@ -137,10 +137,11 @@ public class ChatUI extends JFrame implements ActionListener {
 
 
 		outputArea.setMargin(new Insets(10, 10, 10, 10));
+		outputArea.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
 		outputArea.setEditable(false);
 		textScrollPane = new JScrollPane(outputArea);
-		textScrollPane.setPreferredSize(new Dimension(650, 410));
+		textScrollPane.setPreferredSize(new Dimension(580, 370));
 		textPanel = new JPanel();
 		textPanel.add(textScrollPane);
 
@@ -151,9 +152,9 @@ public class ChatUI extends JFrame implements ActionListener {
 	public JPanel addRightSide() {
 		
 		usersPanel = new JPanel(new BorderLayout()); 
-		usersPanel.setBorder(new EmptyBorder(10, 0, 10, 0)); // [top, left, bottom,right] 
-		JLabel usersLabel = new JLabel("Select User to PM");
-		usersLabel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		usersPanel.setBorder(new EmptyBorder(0, 10, 10, 10)); // [top, left, bottom,right] 
+		JLabel usersLabel = new JLabel("Select user for PM");
+		usersLabel.setBorder(new EmptyBorder(10, 10, 0, 10));
 		usersLabel.setLayout(null);
 
 		String[] noUsers = { "" };
@@ -182,11 +183,11 @@ public class ChatUI extends JFrame implements ActionListener {
 		jList = new JList<String>(defaultList);
 		jList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-		jList.setVisibleRowCount(30);
+		jList.setVisibleRowCount(20);
 		
 		scrollPane = new JScrollPane(jList);
 		usersPanel.add(scrollPane, BorderLayout.CENTER);
-		scrollPane.setPreferredSize(new Dimension(120, 450));
+		scrollPane.setPreferredSize(new Dimension(150, 200));
 		//usersPanel.add(defaulUsersPanel, BorderLayout.CENTER);
 		scrollPane.repaint();
 		scrollPane.revalidate();
@@ -207,7 +208,7 @@ public class ChatUI extends JFrame implements ActionListener {
 		countUsersArea = new JTextField();
 		
 		countUsersArea.setMinimumSize(getMinimumSize());
-		countUsersArea.setMargin(new Insets(10, 10, 10, 10));
+		countUsersArea.setMargin(new Insets(12, 10, 12, 10));
 		countUsersArea.setEditable(false);
 		countPanel.add(countUsersArea, BorderLayout.CENTER);
 		
